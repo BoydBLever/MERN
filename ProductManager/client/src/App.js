@@ -5,6 +5,7 @@ import axios from 'axios';
 import Main from './components/Main';
 import DisplayOne from './components/DisplayOne';
 import Form from './components/Form';
+import Update from './components/Update';
 
 function App() {
 
@@ -15,9 +16,9 @@ function App() {
         <Routes>
           <Route element={<Main/>} path="/"/>
           <Route element={<DisplayOne />} path="/products/:id" />
+          <Route element={<Update/>} path="/products/:id/edit" />
         </Routes>
       </div>
-      {/* <DisplayOne/> */}
     </div>
   );
 }
