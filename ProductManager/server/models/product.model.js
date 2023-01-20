@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const ProductSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: [true, "Must have a {PATH}."],
+        required: [true, "Must have a title."],
         minlength: [3, "{PATH} must have at least 3 chars, but you only gave {VALUE}"]
     }, 
     description: {
