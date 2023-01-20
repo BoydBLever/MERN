@@ -21,7 +21,7 @@ module.exports.createProduct = (req, res) => {
         });}
 
 module.exports.findOneSingleProduct = (req, res) => {
-    Product.findOne({ _id: req.params.id })
+    Product.findById({ _id: req.params.id })
         .then(theProduct => {
             res.json({ product: theProduct })
         })
