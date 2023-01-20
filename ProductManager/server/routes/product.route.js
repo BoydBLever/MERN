@@ -8,16 +8,3 @@ module.exports = (app) => {
     app.put("/api/products/:id", ProductController.updateExistingProduct);
     app.delete('/api/products/:id', ProductController.deleteAnExistingProduct);
 }
-
-// postman add first product
-// {
-//     "product": {
-//         "title": "First Product",
-//         "description": "Useful widget",
-//         "price": 100,
-//         "_id": "63c9015362487729511be97c",
-//         "createdAt": "2023-01-19T08:37:39.046Z",
-//         "updatedAt": "2023-01-19T08:37:39.046Z",
-//         "__v": 0
-//     }
-// }

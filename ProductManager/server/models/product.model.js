@@ -10,11 +10,11 @@ const ProductSchema = new mongoose.Schema({
     description: {
         type: String,
         required: [true,"Must include a description."],
-        minLength: [10,"{PATH} must have 10 chars, but you only gave {VALUE}"]
+        minLength: [4,"{PATH} must have 4 chars, but you only gave {VALUE}"]
     },
     price: {
         type: Number,
-        required: [true, "Please include a price."]
+        required: [true, "Please include price."]
     }
 }, {timestamps: true});
  

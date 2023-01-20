@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require('cors');
 const app = express();
 const PORT = 8000;
-const DB = "products"
+const DB = "products";
 
 // MIDDLEWARE
 app.use(cors())
@@ -19,6 +19,6 @@ require("./config/mongoose.config")(DB)
 require("./routes/product.route")(app)
 
 //START THE SERVER
-app.listen(PORT, ()=>{
-    console.log(`🦄🦄🦄🦄 ${PORT} running`)
+app.listen(PORT, () => {
+    console.log(`${PORT} running`)
 });
