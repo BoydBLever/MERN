@@ -28,6 +28,7 @@ const Form = (props) => {
                 Price $: <input type="number" onChange={(e) => setPrice(e.target.value)} value={price} /> <br />
                 <button>Create</button>
             </form>
+            <hr/>
         </div>
     )
 }
