@@ -23,7 +23,7 @@ const Create = (props) => {
                 navigate("/notes");
             })
             .catch(err => {
-                const errorResponse = err.response.data.err.errors;
+                const errorResponse = err.response.data.errors;
                 const errorArr = [];
                 for (const key of Object.keys(errorResponse)) {
                     errorArr.push(errorResponse[key].message)
