@@ -9,6 +9,8 @@ const Create = (props) => {
     const [content, setContent] = useState("")
     const [isImportant, setIsImportant] = useState(false)
 
+    const [errors, setErrors] = useState([]);
+
     const createNote = (e) => {
         e.preventDefault();
 
@@ -21,8 +23,16 @@ const Create = (props) => {
                 navigate("/notes");
             })
             .catch(err => {
+                const errorResponse = err.response.data.err.errors;
+                const errorArr = [];
+                for (const key of Object.keys(errorResponse)) {
+                    errorArr.push(errorResponse[key].message)
+                }
+                // Set Errors
+                setErrors(errorArr);
             console.log("❌ ERROR");
             console.log(err);
+            console.log(err.response.data);
             })
     }
 
@@ -32,6 +42,9 @@ const Create = (props) => {
             {JSON.stringify(title)} <br />
             {JSON.stringify(content)} <br />
             {JSON.stringify(isImportant)} <br />
+            <hr/>
+            {JSON.stringify(errors)}
+            <hr/>
             <form onSubmit={createNote} >
                 Title: <input onChange={e => setTitle(e.target.value)} value={title} /> <br />
                 Content: <input onChange={e => setContent(e.target.value)} value={content} /> <br />
