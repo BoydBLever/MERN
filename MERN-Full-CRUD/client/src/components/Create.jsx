@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Create = (props) => {
     const navigate = useNavigate()
@@ -9,6 +9,7 @@ const Create = (props) => {
     const [content, setContent] = useState("")
     const [isImportant, setIsImportant] = useState(false)
 
+    //DATABASE ERRORS   
     const [errors, setErrors] = useState([]);
 
     const createNote = (e) => {
@@ -30,21 +31,16 @@ const Create = (props) => {
                 }
                 // Set Errors
                 setErrors(errorArr);
-            console.log("❌ ERROR");
-            console.log(err);
-            console.log(err.response.data);
+                console.log("❌ ERROR");
+                console.log(err);
+                console.log(err.response.data);
             })
     }
 
     return (
         // Form for title, content and isImportant
         <div>
-            {JSON.stringify(title)} <br />
-            {JSON.stringify(content)} <br />
-            {JSON.stringify(isImportant)} <br />
-            <hr/>
-            {JSON.stringify(errors)}
-            <hr/>
+            {errors.map((err, index) => <p style={{ color: "red" }} key={index}>{err}</p>)}
             <form onSubmit={createNote} >
                 Title: <input onChange={e => setTitle(e.target.value)} value={title} /> <br />
                 Content: <input onChange={e => setContent(e.target.value)} value={content} /> <br />

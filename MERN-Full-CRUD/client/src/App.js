@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <h1>MERN Full-CRUD </h1>
-      <Link to="/notes">Home</Link> &nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/notes">Home</Link> &nbsp;&nbsp;&nbsp;
       <Link to="/create">Create</Link>
       <hr />
 
