@@ -22,7 +22,7 @@ module.exports = {
             .then(newNote => {
                 res.json(newNote)
             })
-            .catch(err => res.json(err))
+            .catch(err => res.json({message: "SERVER ERROR", err}));
     },
 
     //READ ONE

@@ -16,10 +16,14 @@ const Create = (props) => {
             title, content, isImportant
         })
             .then(res => {
-                console.log("🦄🦄🦄🦄🦄🦄🦄", res.data);
+                console.log("✅ SUCCESS");
+                console.log(res.data);
                 navigate("/notes");
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+            console.log("❌ ERROR");
+            console.log(err);
+            })
     }
 
     return (

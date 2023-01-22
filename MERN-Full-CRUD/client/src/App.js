@@ -16,7 +16,7 @@ function App() {
       {/* SHOW TIME*/}
       <Routes>
 
-        {/* MAIN - all NOTES */}
+        {/* All NOTES - MAIN */}
         <Route path='/notes' element={<Main />} />
 
         {/* CREATE */}
