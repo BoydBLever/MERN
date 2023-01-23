@@ -44,13 +44,12 @@ const Main = (props) => {
     <div>
         <h1>All Authors</h1>
         {
-            // TO DO: SORT AUTHORS ALPHABETICALLY
             authors.map((oneAuthor, index)=> {
                 return (
                 <div key={oneAuthor._id} className={authorStyle.author}>
                     <h1>{oneAuthor.name}</h1>
                     <button onClick={() => goToUpdate(oneAuthor._id)}>Edit</button>
-                    <button onClick={()=>deleteAuthor(oneAuthor._id)}>Delete</button>
+                    <button onClick={()=> deleteAuthor(oneAuthor._id)}>Delete</button>
                     </div>
                 )
             })
