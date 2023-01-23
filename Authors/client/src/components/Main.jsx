@@ -30,6 +30,9 @@ const Main = (props) => {
         .then(res => {
             console.log(res.data);
             console.log("DB DELETE IS SUCCESSFUL!");
+
+            // remove from the DOM after a successful delete
+            setAuthors(authors.filter((author)=> author._id !== deleteID))
         })
         .catch(err => console.log(err))
     }
