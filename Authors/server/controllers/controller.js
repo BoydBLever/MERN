@@ -8,7 +8,7 @@ module.exports = {
         Author.find()
         .then(allAuthors => {
             console.log(allAuthors.length);
-            res.json(allAuthors)
+            res.json(allAuthors);
         })
         .catch(err => res.json(err))
     },

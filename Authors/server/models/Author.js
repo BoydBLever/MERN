@@ -9,4 +9,5 @@ const AuthorSchema = new mongoose.Schema({
 }, {timestamps: true})
 
 //create the schema and export it
-module.exports.Author = mongoose.model("Author", AuthorSchema);
+const Author = mongoose.model("Author", AuthorSchema);
+module.exports = Author;
