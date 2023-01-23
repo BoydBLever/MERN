@@ -26,15 +26,18 @@ const Main = (props) => {
     const deleteAuthor = (deleteID) => {
         console.log(deleteID);
 
-        axios.delete(`http://localhost:8000/api/authors/${deleteID}`)
-        .then(res => {
-            console.log(res.data);
-            console.log("DB DELETE IS SUCCESSFUL!");
+        if (window.confirm("Are you sure?")) {
 
-            // remove from the DOM after a successful delete
-            setAuthors(authors.filter((author)=> author._id !== deleteID))
-        })
-        .catch(err => console.log(err))
+            axios.delete(`http://localhost:8000/api/authors/${deleteID}`)
+            .then(res => {
+                console.log(res.data);
+                console.log("DB DELETE IS SUCCESSFUL!");
+                
+                // remove from the DOM after a successful delete
+                setAuthors(authors.filter((author)=> author._id !== deleteID))
+            })
+            .catch(err => console.log(err))
+        }
     }
   
     return (
