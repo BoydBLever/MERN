@@ -35,7 +35,7 @@ module.exports = {
         console.log("req.body:", req.body);
         Author.findByIdAndUpdate(req.params.id, req.body, {new:true, runValidators: true})
         .then(updatedAuthor => res.json(updatedAuthor))
-        .catch(err=> res.json(err))
+        .catch(err=> res.status(400).json(err))
     },
     // DELETE
     delete : (req, res) => {

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'
 import authorStyle from './main.module.css';
-import {Link, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 const Main = (props) => {
     const navigate = useNavigate();
@@ -44,7 +44,7 @@ const Main = (props) => {
     <div>
         <h1>All Authors</h1>
         {
-            // authors.alphabeticalSort
+            // TO DO: SORT AUTHORS ALPHABETICALLY
             authors.map((oneAuthor, index)=> {
                 return (
                 <div key={oneAuthor._id} className={authorStyle.author}>
