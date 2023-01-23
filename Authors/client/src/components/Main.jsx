@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'
+import authorStyle from './main.module.css';
 
 const Main = (props) => {
   
@@ -20,8 +21,10 @@ const Main = (props) => {
         <h1>All Authors</h1>
         {
             authors.map((oneAuthor, index)=> {
-                return <div key={oneAuthor._id}>
+                return <div key={oneAuthor._id} className={authorStyle.author}>
                     {oneAuthor.name}
+                    <button>Edit</button>
+                    <button>Delete</button>
                     </div>
             })
         }
