@@ -22,6 +22,17 @@ const Main = (props) => {
         console.log(updateID);
         navigate(`/edit/${updateID}`)
     } 
+
+    const deleteAuthor = (deleteID) => {
+        console.log(deleteID);
+
+        axios.delete(`http://localhost:8000/api/authors/${deleteID}`)
+        .then(res => {
+            console.log(res.data);
+            console.log("DB DELETE IS SUCCESSFUL!");
+        })
+        .catch(err => console.log(err))
+    }
   
     return (
     <div>
@@ -32,7 +43,7 @@ const Main = (props) => {
                 <div key={oneAuthor._id} className={authorStyle.author}>
                     <h1>{oneAuthor.name}</h1>
                     <button onClick={() => goToUpdate(oneAuthor._id)}>Edit</button>
-                    <button>Delete</button>
+                    <button onClick={()=>deleteAuthor(oneAuthor._id)}>Delete</button>
                     </div>
                 )
             })
