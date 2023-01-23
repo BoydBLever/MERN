@@ -2,7 +2,7 @@ import './App.css';
 import {Link, Routes, Route, Navigate} from 'react-router-dom'
 import Main from './components/Main';
 import Create from './components/Create';
-import Edit from './components/Edit';
+import Update from './components/Update';
 
 
 function App() {
@@ -19,8 +19,8 @@ function App() {
       {/* ADD A NEW AUTHOR */}
       <Route path="/new" element={<Create/>}/>
 
-      {/* EDIT AUTHOR */}
-      <Route path="/edit/:id" element={<Edit/>}/>
+      {/* UPDATE AUTHOR */}
+      <Route path="/edit/:id" element={<Update/>}/>
 
       {/* REDIRECT */}
       <Route path="*" element={<Navigate to="/notes" replace />}/>
