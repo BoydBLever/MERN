@@ -33,10 +33,10 @@ const Create = (props) => {
 
     return (
         <div>
+            {errors.map((err, index) => <p style={{color: "red"}} key={index}>{err}</p>)}
             <form onSubmit={createAuthor} >
                 Name: <input onChange={e => setName(e.target.value)} value={name} /> <br />
                 <button>Submit</button> &nbsp;
-                <button>Cancel</button>
             </form>
         </div>
 
