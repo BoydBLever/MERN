@@ -44,6 +44,7 @@ const Main = (props) => {
     <div>
         <h1>All Authors</h1>
         {
+            // authors.alphabeticalSort
             authors.map((oneAuthor, index)=> {
                 return (
                 <div key={oneAuthor._id} className={authorStyle.author}>

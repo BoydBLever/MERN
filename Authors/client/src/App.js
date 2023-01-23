@@ -23,8 +23,7 @@ function App() {
       <Route path="/edit/:id" element={<Update/>}/>
 
       {/* REDIRECT */}
-      <Route path="*" element={<Navigate to="/notes" replace />}/>
-
+      <Route path="*" element={<Navigate to="/authors" replace />}/>
 
       </Routes>
     </div>
