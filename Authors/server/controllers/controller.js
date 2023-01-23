@@ -20,7 +20,7 @@ module.exports = {
         .then(newAuthor => {
             res.json(newAuthor)
         })
-        .catch(err=> res.json(err))
+        .catch(err=> res.status(400).json(err))
     },
     // READ ONE
     findOne : (req, res) => {

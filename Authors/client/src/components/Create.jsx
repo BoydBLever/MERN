@@ -9,6 +9,8 @@ const Create = (props) => {
 
     const [name, setName] = useState("")
 
+    const [errors, setErrors] = useState([]);
+
     const createAuthor = (e) => {
         e.preventDefault();
         axios.post("http://localhost:8000/api/authors", {
@@ -18,7 +20,15 @@ const Create = (props) => {
             console.log(res.data);
             navigate("/authors");
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+            console.log(err.response.data);
+            const errorResponse = err.response.data.errors;
+            const errorArr=[];
+            for (const key of Object.keys(errorResponse)){
+                errorArr.push(errorResponse[key].message)
+            }
+            setErrors(errorArr);
+        })
     }
 
     return (
