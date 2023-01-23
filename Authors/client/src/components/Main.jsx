@@ -21,11 +21,13 @@ const Main = (props) => {
         <h1>All Authors</h1>
         {
             authors.map((oneAuthor, index)=> {
-                return <div key={oneAuthor._id} className={authorStyle.author}>
-                    {oneAuthor.name}
+                return (
+                <div key={oneAuthor._id} className={authorStyle.author}>
+                    <h1>{oneAuthor.name}</h1>
                     <button>Edit</button>
                     <button>Delete</button>
                     </div>
+                )
             })
         }
     </div>
