@@ -28,8 +28,8 @@ const Status = (props) => {
                     return (
                         <div key={onePlayer._id} className={playerStyle.player2}>
                             <h1>{onePlayer.name}</h1>
-                            <button style={{backgroundColor: toggle ? '#FFF' : 'green'}} onClick={()=> toggleButton(onePlayer._id)}>Playing</button>
-                            <button style={{backgroundColor: toggle ? '#FFF' : 'red'}} onClick={()=> toggleButton(onePlayer._id)}>Not Playing</button>
+                            <button style={{backgroundColor: toggle ? 'white' : 'green'}} onClick={()=> toggleButton(onePlayer._id)}>Playing</button>
+                            <button style={{backgroundColor: toggle ? 'white' : 'red'}} onClick={()=> toggleButton(onePlayer._id)}>Not Playing</button>
                             <button style={{backgroundColor: toggle ? 'yellow' : 'gray'}} onClick={()=> toggleButton(onePlayer._id)}>Undecided</button>
                         </div>
                     )
