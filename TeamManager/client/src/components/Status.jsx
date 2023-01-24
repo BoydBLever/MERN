@@ -22,7 +22,8 @@ const Status = (props) => {
     
     return (
         <div>
-            <h1>List</h1>
+            <h1> ← Game 1 of 3 →</h1>
+
             {
                 players.map((onePlayer, index) => {
                     return (
