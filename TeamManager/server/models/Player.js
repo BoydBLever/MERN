@@ -11,7 +11,12 @@ const PlayerSchema = new mongoose.Schema({
     position: {
         type: String,
         required: false
-    }}, {timestamps: true})
+    }, 
+    game: {
+        type: [Number],
+        default: [0,0,0]
+    }
+ }, {timestamps: true})
 
     const Player = mongoose.model("Player", PlayerSchema);
     module.exports = Player;
