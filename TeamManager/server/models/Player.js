@@ -10,8 +10,7 @@ const PlayerSchema = new mongoose.Schema({
     },
     position: {
         type: String,
-        required: [true, 'Position required.'],
-        minlength: [2, 'Position minimum is two letters.']
+        required: false
     }}, {timestamps: true})
 
     const Player = mongoose.model("Player", PlayerSchema);

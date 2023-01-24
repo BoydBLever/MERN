@@ -40,7 +40,7 @@ const Main = (props) => {
           return (
             <div key={onePlayer._id} className={playerStyle.player}>
               <h1>{onePlayer.name}</h1> <h1>{onePlayer.position}</h1>
-              <button onClick={() => deletePlayer(onePlayer._id)}>Delete</button>
+              <button style={{backgroundColor: "red", color: "white"}} onClick={() => deletePlayer(onePlayer._id)}>Delete</button>
             </div>
           )
         })
