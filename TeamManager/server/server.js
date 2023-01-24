@@ -8,5 +8,6 @@ app.use(cors(), express.json(), express.urlencoded({extended:true}));
 
 require("./config/config")(DB)
 
+require('./routes/route')(app)
 
 app.listen(PORT, () => console.log(`🏃🏽🏃‍♂️${PORT} RUNNING`));
