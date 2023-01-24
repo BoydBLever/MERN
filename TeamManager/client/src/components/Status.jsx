@@ -4,7 +4,11 @@ import playerStyle from './main.module.css';
 
 const Status = (props) => {
     const [players, setPlayers] = useState([]);
+    const [toggle, setToggle] = useState(false);
     
+    const toggleButton = () => {
+        setToggle(!toggle)
+    }
     
     useEffect(() => {
         axios.get("http://localhost:1337/api/players")
@@ -24,9 +28,9 @@ const Status = (props) => {
                     return (
                         <div key={onePlayer._id} className={playerStyle.player2}>
                             <h1>{onePlayer.name}</h1>
-                            <button>Playing</button>
-                            <button>Not Playing</button>
-                            <button style={{backgroundColor: "yellow"}}>Undecided</button>
+                            <button style={{backgroundColor: toggle ? '#FFF' : 'green'}} onClick={()=> toggleButton(onePlayer._id)}>Playing</button>
+                            <button style={{backgroundColor: toggle ? '#FFF' : 'red'}} onClick={()=> toggleButton(onePlayer._id)}>Not Playing</button>
+                            <button style={{backgroundColor: toggle ? 'yellow' : 'gray'}} onClick={()=> toggleButton(onePlayer._id)}>Undecided</button>
                         </div>
                     )
                 })
