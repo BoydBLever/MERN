@@ -13,7 +13,7 @@ const Create = (props) => {
 
     const createPlayer = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:8000/api/players", {
+        axios.post("http://localhost:1337/api/players", {
             name, position
         })
         .then(res => {
