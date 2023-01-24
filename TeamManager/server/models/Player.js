@@ -5,13 +5,13 @@ const mongoose = require('mongoose')
 const PlayerSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, '{ PATH } must be present.'],
-        minlength: [3, '{ PATH } must be at least three letters.']
+        required: [true, 'Name required.'],
+        minlength: [2, 'Minimum name is two letters.']
     },
     position: {
         type: String,
-        required: [true, '{ PATH } required.'],
-        minlength: [2, '{ PATH } min is two letters.']
+        required: [true, 'Position required.'],
+        minlength: [2, 'Position minimum is two letters.']
     }}, {timestamps: true})
 
     const Player = mongoose.model("Player", PlayerSchema);

@@ -18,7 +18,7 @@ const Create = (props) => {
         })
         .then(res => {
             console.log(res.data);
-            navigate("/players");
+            navigate("/players/list");
         })
         .catch(err => {
             console.log(err.response.data);

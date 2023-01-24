@@ -6,7 +6,7 @@ import Create from './components/Create';
 function App() {
   return (
     <div className="App">
-      <h1>⚾️ Team Manager 🏟️ 🧢</h1>
+      <h1>⚾️ Team Manager 🏟️ </h1>
       <Link to="/players/list">List</Link> &nbsp;&nbsp;&nbsp;&nbsp;
       <Link to="/players/addplayer">Add Player</Link>
       <hr />
