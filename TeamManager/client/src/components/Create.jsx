@@ -37,7 +37,10 @@ const Create = (props) => {
             <form onSubmit={createPlayer} >
                 Name: <input onChange={e => setName(e.target.value)} value={name} /> <br />
                 Position: <input onChange={e => setPosition(e.target.value)} value={position} /> <br />
-                <button style={{backgroundColor: "green", color: "white"}}>Add</button> &nbsp;
+                <button 
+                style={{backgroundColor: "green", color: "white"}}
+                disabled={!name}
+                >Add</button> &nbsp;
             </form>
         </div>
     )
