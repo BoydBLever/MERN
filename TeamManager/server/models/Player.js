@@ -12,9 +12,10 @@ const PlayerSchema = new mongoose.Schema({
         type: String,
         required: false
     }, 
-    game: {
+    status: {
         type: [Number],
-        default: [0,0,0]
+        default: [0,0,0],
+        required: false
     }
  }, {timestamps: true})
 
