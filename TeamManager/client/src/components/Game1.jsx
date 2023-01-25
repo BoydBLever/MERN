@@ -36,9 +36,9 @@ const Game1 = (props) => {
                     return (
                         <div key={onePlayer._id} className={playerStyle.player2}>
                             <h1>{onePlayer.name}</h1>
-                            <button name='playing' className={onePlayer.status === playing ? 'green' : ''} onClick={clickHandler('playing')}>Playing</button>
-                            <button name='not playing' className={onePlayer.status === notplaying ? 'red' : ''} onClick={clickHandler('not playing')}>Not Playing</button>
-                            <button name='undecided' className={onePlayer.status === undecided ? 'yellow' : ''} onClick={clickHandler('undecided')}>Playing</button>
+                            <button name='playing' className={onePlayer.game === playing ? 'green' : ''} onClick={clickHandler('playing')}>Playing</button>
+                            <button name='not playing' className={onePlayer.game === notplaying ? 'red' : ''} onClick={clickHandler('not playing')}>Not Playing</button>
+                            <button name='undecided' className={onePlayer.game === undecided ? 'yellow' : ''} onClick={clickHandler('undecided')}>Playing</button>
                         </div>
                     )
                 })
