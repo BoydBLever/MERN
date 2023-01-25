@@ -1,4 +1,4 @@
-//player has a name and a position
+// player has a name, position and status
 // namee has a type, it is required, and there is a minlength
 const mongoose = require('mongoose')
 
