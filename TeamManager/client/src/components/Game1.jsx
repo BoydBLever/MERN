@@ -5,6 +5,7 @@ import playerStyle from './main.module.css';
 
 const Game1 = (props) => {
     const [players, setPlayers] = useState(null);
+    const [game, setGame] = useState("undecided");
 
     useEffect(() => {
         axios.get("http://localhost:1337/api/players")
@@ -19,9 +20,9 @@ const Game1 = (props) => {
         e.preventDefault();
         //update the player.game to playing, not playing or undecided
         const gameUpdate = {
-            game: 'playing'
+            game: 'name'
         }
-        setGame('playing');
+        setGame('name');
     }
     }
 
