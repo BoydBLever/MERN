@@ -16,8 +16,9 @@ const Game1 = (props) => {
             .catch(err => console.log(err))
     }, [])
 
-    const Hello = () => {
-        console.log("Hello World!");
+    const clickHandler = (e, ID) => {
+        //route
+        //ID
     }
 
     return (
@@ -31,9 +32,9 @@ const Game1 = (props) => {
                     return (
                         <div key={onePlayer._id} className={playerStyle.player2}>
                             <h1>{onePlayer.name}</h1>
-                            <button onClick={Hello}>Playing</button>
-                            <button>Not Playing</button>
-                            <button>Undecided</button>
+                            <button name='playing' onClick={clickHandler}>Playing</button>
+                            <button name='not playing'>Not Playing</button>
+                            <button name='undecided'>Undecided</button>
                         </div>
                     )
                 })

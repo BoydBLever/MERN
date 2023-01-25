@@ -12,10 +12,19 @@ const PlayerSchema = new mongoose.Schema({
         type: String,
         required: false
     }, 
-    game: {
-        type: [Number],
-        default: [0,0,0]
-    }
+    game1: {
+        type: String,
+        default: "undecided"
+    },
+    game2: {
+        type: String,
+        default: "undecided"
+    },
+    game3: {
+        type: String,
+        default: "undecided"
+    },
+
  }, {timestamps: true})
 
     const Player = mongoose.model("Player", PlayerSchema);
