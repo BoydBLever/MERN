@@ -1,44 +1,39 @@
-
-import React, { useState, useEffect } from 'react';
-import axios from 'axios'
-import playerStyle from './main.module.css';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 
-const Game1 = (props) => {
-    const [players, setPlayers] = useState(null);
-    // const [status, setStatus] = useState(status);
+const Game2 = (props) => {
 
-    useEffect(() => {
-        axios.get("http://localhost:1337/api/players")
-            .then(res => {
-                console.log(res.data);
-                setPlayers(res.data)
-            })
-            .catch(err => console.log(err))
-    }, [])
+    const Button = styled.button`
+  /* Same as above */
+`;
+    const ButtonToggle = styled(Button)`
+  opacity: 0.6;
+  ${({ active }) =>
+            active &&
+            `
+    opacity: 1;
+  `}
+`;
+    const ButtonGroup = styled.div`
+  display: flex;
+`;
+    const types = ['Cash', 'Credit Card', 'Bitcoin'];
 
+    const [active, setActive] = useState(types[0]);
     return (
-        <div>
-            <h1>Player Status</h1>
-            <Link to="/status/game/1">Game 1 |</Link> &nbsp;
-            <Link to="/status/game/2">Game 2 |</Link> &nbsp;
-            <Link to="/status/game/3">Game 3</Link> 
-            {
-            //if players is not null, then you map through the players array.
-            players && players.map((onePlayer, index) => {
-                    return (
-                        <div key={onePlayer._id} className={playerStyle.player2}>
-                            <h1>{onePlayer.name}</h1>
-                            <button>Playing</button>
-                            <button>Not Playing</button>
-                            <button>Undecided</button>
-                        </div>
-                    )
-                })
-            }
-        </div>
-    )
+        <ButtonGroup>
+            {types.map(type => (
+                <ButtonToggle
+                    key={type}
+                    active={active === type}
+                    onClick={() => setActive(type)}
+                >
+                    {type}
+                </ButtonToggle>
+            ))}
+        </ButtonGroup>
+    );
 }
-
-export default Game1
+}
+export default Game2
