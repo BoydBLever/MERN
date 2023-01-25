@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import playerStyle from './main.module.css';
-import { Link } from 'react-router-dom';
 
 
 const Game1 = (props) => {
@@ -16,9 +15,14 @@ const Game1 = (props) => {
             .catch(err => console.log(err))
     }, [])
 
-    const clickHandler = (e, ID) => {
-        //route
-        //ID
+    const clickHandler = (e, gameID) => {
+        e.preventDefault();
+        //update the player.game to playing, not playing or undecided
+        const gameUpdate = {
+            game: 'playing'
+        }
+        setGame('playing');
+    }
     }
 
     return (
@@ -32,9 +36,9 @@ const Game1 = (props) => {
                     return (
                         <div key={onePlayer._id} className={playerStyle.player2}>
                             <h1>{onePlayer.name}</h1>
-                            <button name='playing' onClick={clickHandler}>Playing</button>
-                            <button name='not playing'>Not Playing</button>
-                            <button name='undecided'>Undecided</button>
+                            <button name='playing' className={onePlayer.status === playing ? 'green' : ''} onClick={clickHandler('playing')}>Playing</button>
+                            <button name='not playing' className={onePlayer.status === notplaying ? 'red' : ''} onClick={clickHandler('not playing')}>Not Playing</button>
+                            <button name='undecided' className={onePlayer.status === undecided ? 'yellow' : ''} onClick={clickHandler('undecided')}>Playing</button>
                         </div>
                     )
                 })
