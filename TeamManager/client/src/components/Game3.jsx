@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 const Game1 = (props) => {
     const [players, setPlayers] = useState(null);
-    // const [status, setStatus] = useState(status);
 
     useEffect(() => {
         axios.get("http://localhost:1337/api/players")
