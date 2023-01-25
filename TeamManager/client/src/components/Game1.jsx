@@ -4,7 +4,6 @@ import playerStyle from './main.module.css';
 import { Link } from 'react-router-dom';
 import './game.css';
 
-
 const Game1 = (props) => {
     const [players, setPlayers] = useState(null);
     // const [game, setGame] = useState("undecided");

@@ -17,3 +17,10 @@
     padding: 10px 20px;
     background-color: lightgray;
 }
+
+.green {
+    background-color: green;
+}
+.red {
+    background-color: red
+}

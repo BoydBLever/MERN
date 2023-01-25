@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import playerStyle from './main.module.css';
 import { Link } from 'react-router-dom';
+import './game.css';
 
-
-const Game1 = (props) => {
+const Game3 = (props) => {
     const [players, setPlayers] = useState(null);
+    // const [game, setGame] = useState("undecided");
+    const [refresh, setRefresh] = useState(false);
 
     useEffect(() => {
         axios.get("http://localhost:1337/api/players")
@@ -14,7 +16,20 @@ const Game1 = (props) => {
                 setPlayers(res.data)
             })
             .catch(err => console.log(err))
-    }, [])
+    }, [refresh])
+
+    const clickHandler = (game, id) => {
+        //update the player.game to playing, not playing or undecided
+        let onePlayer = players.filter((p) => p._id === id)
+        onePlayer.game3 = game;
+        console.log(onePlayer.game3);
+        axios.put(`http://localhost:1337/api/players/${id}`, {...onePlayer,game3:game})
+        .then( res => {
+            console.log(res);
+            setRefresh(!refresh);
+        })
+        .catch(err => console.log(err))
+    }
 
     return (
         <div>
@@ -23,14 +38,13 @@ const Game1 = (props) => {
             <Link to="/status/game/2">Game 2 |</Link> &nbsp;
             <Link to="/status/game/3">Game 3</Link> 
             {
-            //if players is not null, then you map through the players array.
             players && players.map((onePlayer, index) => {
                     return (
                         <div key={onePlayer._id} className={playerStyle.player2}>
                             <h1>{onePlayer.name}</h1>
-                            <button>Playing</button>
-                            <button>Not Playing</button>
-                            <button>Undecided</button>
+                            <button name='playing' className={onePlayer.game3 === "playing" ? 'green' : ''} onClick={() => {clickHandler('playing', onePlayer._id)}}>Playing</button>
+                            <button name='not playing' className={onePlayer.game3 === "not playing" ? 'red' : ''} onClick={() => {clickHandler('not playing', onePlayer._id)}}>Not Playing</button>
+                            <button name='undecided' className={onePlayer.game3 === "undecided" ? 'yellow' : ''} onClick={() => {clickHandler('undecided', onePlayer._id)}}>Playing</button>
                         </div>
                     )
                 })
@@ -39,4 +53,4 @@ const Game1 = (props) => {
     )
 }
 
-export default Game1
+export default Game3
