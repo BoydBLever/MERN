@@ -3,6 +3,10 @@ import { Link, Routes, Route, Navigate } from 'react-router-dom';
 import Main from './components/Main';
 import Create from './components/Create';
 import Status from './components/Status';
+import Game1 from './components/Game1';
+import Game2 from './components/Game2';
+import Game3 from './components/Game3';
+
 
 function App() {
   return (
@@ -21,7 +25,9 @@ function App() {
         <Route path="/players/addplayer" element={<Create />} />
 
         {/* MANAGE PLAYER STATUS */}
-        <Route path="/status/game/1" element={<Status/>}/>
+        <Route path="/status/game/1" element={<Game1/>}/>
+        <Route path="/status/game/2" element={<Game2/>}/>
+        <Route path="/status/game/3" element={<Game3/>}/>
 
         {/* REDIRECT */}
         <Route path="*" element={<Navigate to="/players/list" replace />} />
