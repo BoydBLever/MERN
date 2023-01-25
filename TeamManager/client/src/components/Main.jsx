@@ -25,7 +25,6 @@ const Main = (props) => {
           console.log(res.data);
           console.log("DB DELETE IS SUCCESSFUL!");
 
-          // remove from the DOM after a successful delete
           setPlayers(players.filter((player) => player._id !== deleteID))
         })
         .catch(err => console.log(err))
